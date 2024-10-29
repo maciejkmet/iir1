@@ -76,14 +76,8 @@ static const char orderTooHigh[] = "Requested order is too high. Provide a highe
  * @param msg Error message
  */
 inline void throw_invalid_argument(const char* msg) {
-
-#ifndef IIR1_NO_EXCEPTIONS
-    throw std::invalid_argument(msg);
-#else
     (void) msg; // Discard parameter
     abort();
-#endif
-
 }
 
 #endif
